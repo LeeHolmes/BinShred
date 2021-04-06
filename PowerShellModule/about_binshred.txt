@@ -2,7 +2,8 @@ TOPIC
 	about_binshred
 	
 SHORT DESCRIPTION
-	Describes the syntax and usage of the ConvertFrom-BinaryData cmdlet.
+	Uses a BinShred Template (.bst) file to convert binary data into a structured
+	output object.
 	
 LONG DESCRIPTION
 	The ConvertFrom-BinaryData cmdlet is a general purpse cmdlet for parsing
@@ -304,3 +305,12 @@ LONG DESCRIPTION
 
 	pixels :
 		pixel (3 bytes);
+
+
+Addressing more complicated requirements
+
+While BinShred is capable of processing fairly complicated binary formats (such as the BMP example above,) you
+will likely run into data structures that require much more advanced parsing logic. For these, be sure to check
+out Kaitai Struct (https://kaitai.io/), which is a very robust binary parsing engine. While it does not support
+binary parsing via PowerShell, it is possible to compile file format parsers one-at-a-time into C# files,
+which you can then load into PowerShell and use.
